@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { InfoCard } from './InfoCard';
 import { TrendType } from '@/utils/types';
+
+import { InfoCard } from './InfoCard';
 
 const meta: Meta<typeof InfoCard> = {
   component: InfoCard,

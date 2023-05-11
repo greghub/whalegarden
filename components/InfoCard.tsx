@@ -32,8 +32,8 @@ export const InfoCard = ({
 
   return (
     <div className={`rounded-xl border py-4 px-6 ${isDanger ? 'bg-red-50 border-red-100' : 'border-gray-200'}`}>
-      <h5 className={`font-bold text-sm ${isDanger ? 'text-red-900' : 'text-gray-900'}`}>{title}</h5>
-      <p className={`flex items-center font-light text-lg ${isDanger ? 'text-red-700' : 'text-gray-500'}`}>
+      <h5 className={`font-bold text-sm capitalize ${isDanger ? 'text-red-900' : 'text-gray-900'}`}>{title}</h5>
+      <p className={`flex items-center font-light text-2xl mt-1 ${isDanger ? 'text-red-700' : 'text-gray-500'}`}>
         {prefix}
         {value.toLocaleString('en-US')}
         {trend && trendType && <span className={`font-semibold ml-2 text-xs py-0.5 px-2 rounded-full ${getTrendBgColorByType(trendType)}`}>{trend}</span>}

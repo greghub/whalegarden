@@ -35,3 +35,18 @@ export const sampleChartData = `
      ]
   }
 ]`;
+
+export const sampleDropdownData = [
+   {
+      id: 1,
+      label: "AWS"
+   },
+   {
+      id: 2,
+      label: "Azure"
+   },
+   {
+      id: 3,
+      label: "GCP"
+   }
+]

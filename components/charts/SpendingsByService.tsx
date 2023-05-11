@@ -3,9 +3,13 @@ import { ResponsivePie } from "@nivo/pie";
 import { chartColors, chartDefs, chartFills } from "@/utils/options";
 import { SpendingData, SpendingDataGroup } from '@/utils/types';
 
+interface SpendingsByServiceProps {
+  data: SpendingData[];
+}
+
 export const SpendingsByService = ({
   data
-}: SpendingData[]) => {
+}: SpendingsByServiceProps) => {
   const groupedData = data.reduce((acc: any, item: SpendingData) => {
     item.groups.forEach((group: SpendingDataGroup) => {
       acc[group.key] = (acc[group.key] || 0) + group.amount;
@@ -28,6 +32,7 @@ export const SpendingsByService = ({
         data={datasets}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         cornerRadius={12}
+        enableArcLabels={false}
         activeOuterRadiusOffset={8}
         valueFormat=">$,.2f"
         colors={chartColors}

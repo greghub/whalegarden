@@ -3,9 +3,13 @@ import { ResponsiveBar } from "@nivo/bar";
 import { chartColors, chartDefs, chartFills } from "@/utils/options";
 import { SpendingType, SpendingData } from '@/utils/types';
 
+interface SpendingsByMonthProps {
+  data: SpendingData[];
+}
+
 export const SpendingsByMonth = ({
   data
-}: SpendingData[]) => {
+}: SpendingsByMonthProps) => {
   const datasets = data.map((monthData: SpendingData) => {
     const output = { "month": (new Date(monthData.date)).toLocaleString('default', { month: 'long' }) };
     monthData.groups.forEach(group => {
@@ -13,7 +17,7 @@ export const SpendingsByMonth = ({
     });
 
     return output;
-  });
+  }).slice(-6);
 
   return (
     <div style={{ height: 500 }}>
@@ -26,6 +30,7 @@ export const SpendingsByMonth = ({
         borderRadius={4}
         borderWidth={1}
         colors={chartColors}
+        labelSkipWidth={36}
         borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}

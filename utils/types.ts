@@ -19,3 +19,12 @@ export type SpendingData = {
   date: string;
   groups: SpendingDataGroup[];
 }
+
+export type Account = {
+  id: string,
+  label: string,
+  description: string,
+  icon: string,
+}
+
+export type NonEmptyArray<T> = [T, ...T[]];
